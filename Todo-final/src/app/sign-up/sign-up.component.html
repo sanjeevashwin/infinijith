@@ -1,0 +1,48 @@
+<!-- <nav style="z-index: 999; " class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <a class="navbar-brand">TODO APP</a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" routerLink="/">Home</a>
+        
+        <a  class="nav-item nav-link" routerLink="/login" >Login</a>
+        <a  class="nav-item nav-link" routerLink="/signup">Sign-Up</a>
+        
+      </div>
+    </div>
+  
+  </nav> -->
+<div class="row">
+    <div class="col">
+        <form (ngSubmit)="onSubmit()" [formGroup]='signupForm'>
+            <div class="l2">
+                <div class="form-group">
+                    <h1>Signup Page</h1>
+                    <br>
+                    <label >Username</label>
+                    <input class="form-control" id="upname" formControlName="username" type="text" minlength="4" maxlength="10">
+                    <br>  
+                    <label>Password</label>
+                    <input class="form-control" id="uppassword" formControlName="password" type="password" minlength="8" maxlength="12">
+                   
+                    <div>
+                    <label >Provide Admin Key If Have</label>
+                    <input class="form-control" id="adminkey" formControlName="adminkey" type="password" minlength="4" maxlength="10">
+
+                   </div> 
+                    
+                </div>
+                <br>
+                <button [disabled]="!signupForm.valid" type="submit" class="btn btn-success">Sign Up</button>
+                <br>
+                <h4>Have an Account? <a routerLink="/login">Login</a> </h4>
+            </div>
+            
+        </form>
+    </div>
+</div>

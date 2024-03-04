@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  backend:
+    image: thursday
+    ports:
+      - "3000:3000"
+    networks:
+      - mean-app
+      
+  frontend:
+    image: monday
+    ports:
+      - "4200:4200"
+    stdin_open: true
+    networks:
+      - mean-app
+    volumes:
+      - ./Todo-final:/app
+      - /app/node_modules  
+   
+           
+networks:
+  mean-app:
+    driver: bridge

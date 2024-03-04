@@ -1,0 +1,48 @@
+<!-- <nav style="z-index: 999; " class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <a class="navbar-brand">TODO APP</a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" routerLink="/">Home</a>
+        
+        <a  class="nav-item nav-link" routerLink="/login" >Login</a>
+        <a  class="nav-item nav-link" routerLink="/signup">Sign-Up</a>
+        
+      </div>
+    </div>
+  
+  </nav> -->
+<div class="l2">
+    <div class="row">
+        <div class="col">
+            <form (ngSubmit)="onSubmit()"[formGroup]='loginForm'>
+                <div class="l2">
+                    <div class="form-group">
+                        <h1>Login Page</h1>
+                        <br>
+                        <label >Username</label>
+                        <input class="form-control" id="logname" formControlName="username" type="text" minlength="4" maxlength="10">
+                        <br>
+                        <label >Password</label>
+                        <input class="form-control" id="logpassword" formControlName="password" type="password" minlength="8" maxlength="12">
+                    </div>
+                <br>
+                <button [disabled]="!loginForm.valid" type="submit" class="btn btn-success">Login</button>
+                <br>
+                <h4>Don't Have an Account? <a routerLink="/signup">SignUp</a> </h4>
+            </div>
+            </form>
+            <div>
+              
+            </div>
+        </div>
+    </div>
+
+</div>
+   
+

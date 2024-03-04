@@ -1,0 +1,47 @@
+ <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white" style="z-index: 900;">
+        <div class="position-sticky">
+          <h1 style="padding: left 5px; ;">Main page</h1>
+          <div class="list-group list-group-flush mx-3 mt-4">
+            
+            <a *ngIf="!userAuthenticated" routerLink="/home" routerLinkActive="colour" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+              <i class="fas fa-tachometer-alt fa-fw me-3" ></i><span>Home</span>
+            </a>
+            <a *ngIf="!userAuthenticated" routerLink="/login" routerLinkActive="colour" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+              <i class="fas fa-tachometer-alt fa-fw me-3" ></i><span>Login</span>
+            </a>
+            <a *ngIf="!userAuthenticated" routerLink="/signup" routerLinkActive="colour" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+              <i class="fas fa-tachometer-alt fa-fw me-3" ></i><span>Signup</span>
+            </a>
+
+            <a *ngIf="userAuthenticated" routerLink="/todos" routerLinkActive="colour" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+              <i class="fas fa-tachometer-alt fa-fw me-3" ></i><span>Todo</span>
+            </a>
+            <a *ngIf="userAuthenticated " routerLink="/deleteUser" routerLinkActive="colour" class="list-group-item list-group-item-action ">
+              <i class="fas fa-tachometer-alt fa-fw me-3" ></i><span>Delete User</span>
+            </a>
+            <!-- <a *ngIf="userAuthenticated && superAdmin" routerLink="/userrole" routerLinkActive="colour" class="list-group-item list-group-item-action ">
+                <i class="fas fa-tachometer-alt fa-fw me-3" ></i><span>Role Manager</span>
+              </a> -->
+              <a *ngIf="userAuthenticated && superAdmin" routerLink="/adminrole" routerLinkActive="colour" class="list-group-item list-group-item-action ">
+                <i class="fas fa-tachometer-alt fa-fw me-3" ></i><span>Admin Role Manager</span>
+              </a>
+              <a *ngIf="userAuthenticated && superAdmin" routerLink="/userrole" routerLinkActive="colour" class="list-group-item list-group-item-action ">
+                <i class="fas fa-tachometer-alt fa-fw me-3" ></i><span> User Role Manager</span>
+              </a>
+              <a *ngIf="userAuthenticated && admin" routerLink="/accounts" routerLinkActive="colour" class="list-group-item list-group-item-action ">
+                <i class="fas fa-tachometer-alt fa-fw me-3" ></i><span>User Manager</span>
+              </a>
+              <a  *ngIf="userAuthenticated"  routerLinkActive="colour" (click)="logout()" class="list-group-item list-group-item-action ">
+                <i class="fas fa-tachometer-alt fa-fw me-3" ></i><span>LOGOUT</span>
+              </a>
+          </div>
+        </div>
+      </nav>
+  
+ 
+    <main>
+      <div style="margin-right: 70px;">
+          <router-outlet></router-outlet>
+      </div>
+    </main>
+   
