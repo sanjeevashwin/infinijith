@@ -2,14 +2,14 @@ version: '3'
 
 services:
   backend:
-    image: thursday
+    image: backend
     ports:
       - "3000:3000"
     networks:
       - mean-app
       
   frontend:
-    image: monday
+    image: frontend
     ports:
       - "4200:4200"
     stdin_open: true
